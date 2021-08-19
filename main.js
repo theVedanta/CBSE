@@ -29,7 +29,7 @@ app.use(express.static(__dirname + "/public"));
 
 // ROUTES
 app.use("/teachers", require("routes/teachers"));
-app.use("/students", require("routes/teachers"));
+app.use("/students", require("routes/students"));
 
 // ERRORS
 app.get("/err", (req, res) => {
