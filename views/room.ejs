@@ -11,11 +11,23 @@
     ></script>
     <script>
       const roomID = "<%= roomID %>";
+      const userIDf = "<%= userID %>";
     </script>
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="/js/video-chat.js" defer></script>
+    <style>
+      video {
+        width: 50vw;
+        height: 30vh;
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body>
     <div class="video-grid"></div>
+    <div class="share">
+      <video></video>
+    </div>
+    <button class="share-btn">Share</button>
   </body>
 </html>

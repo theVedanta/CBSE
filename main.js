@@ -38,21 +38,21 @@ app.use(express.static(__dirname + "/public"));
 
 app.use("/auth", require("./routes/Auth"));
 
-app.get("/", (req, res) => {
-  res.redirect(`/${uuid.v4()}`);
+app.get("/class", (req, res) => {
+  res.redirect(`/class/${uuid.v4()}`);
 });
-app.get("/:room", (req, res) => {
-  res.render("room", { roomID: req.params.room });
+app.get("/class/:room", (req, res) => {
+  res.render("room", { roomID: req.params.room, userID: uuid.v4() });
 });
 
 io.on("connection", (socket) => {
   socket.on("join", (roomID, userID) => {
     socket.join(roomID);
     socket.broadcast.to(roomID).emit("new-user", userID);
-  });
 
-  socket.on("disconnect", () => {
-    socket.broadcast.to(roomID).emit("disconnected", userID);
+    socket.on("disconnect", () => {
+      socket.broadcast.to(roomID).emit("disconnected", userID);
+    });
   });
 });
 

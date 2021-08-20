@@ -1,9 +1,8 @@
 const socket = io("/");
-const newPeer = new Peer(undefined, {
+const newPeer = new Peer(userIDf, {
   host: "/",
   port: "5001",
 });
-
 const peers = {};
 
 newPeer.on("open", (id) => {
@@ -13,6 +12,7 @@ newPeer.on("open", (id) => {
 // video
 const grid = document.querySelector(".video-grid");
 const userVideo = document.createElement("video");
+const shareVideo = document.querySelector(".share video");
 userVideo.muted = true;
 
 function addVideoStream(video, stream) {
@@ -29,8 +29,8 @@ async function videoSetup() {
     video: true,
     audio: true,
   });
-
   addVideoStream(userVideo, stream);
+
   socket.on("new-user", (userID) => {
     connectToNewUser(userID, stream);
   });
@@ -43,6 +43,13 @@ async function videoSetup() {
       addVideoStream(video, userVideoStream);
     });
   });
+
+  //  ---------------------------------------------------------------- (stop audio and video)
+  for (let track of stream.getTracks()) {
+    if (track.kind === "audio") {
+      track.stop();
+    }
+  }
 }
 videoSetup();
 
@@ -63,4 +70,10 @@ function connectToNewUser(userID, stream) {
 // disconnected
 socket.on("disconnected", (userID) => {
   if (peers[userID]) peers[userID].close();
+});
+
+// ---------------------------------------------------------------- Screen share click
+document.querySelector(".share-btn").addEventListener("click", async () => {
+  const screen = await navigator.mediaDevices.getDisplayMedia();
+  addVideoStream(shareVideo, screen);
 });
