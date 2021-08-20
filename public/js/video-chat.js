@@ -17,6 +17,9 @@ userVideo.muted = true;
 
 function addVideoStream(video, stream) {
   video.srcObject = stream;
+  if (teech === "true") {
+    video.classList.add("teech");
+  }
   video.addEventListener("loadedmetadata", () => {
     video.play();
   });
@@ -32,6 +35,7 @@ async function videoSetup() {
   addVideoStream(userVideo, stream);
 
   socket.on("new-user", (userID) => {
+    console.log("Arrived");
     connectToNewUser(userID, stream);
   });
 

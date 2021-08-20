@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 router.use("/auth", checkNotAuthenticated, require("./auth"));
 router.use("/class", checkAuthenticated, require("./class"));
 router.use("/create-student", checkAuthenticated, require("./stud-create"));
+router.use("/create-meet", checkAuthenticated, require("./create-meet"));
 router.use("/", checkAuthenticated, (req, res) => {
   res.render("teachers/dash");
 });

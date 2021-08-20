@@ -13,6 +13,7 @@
   outline: 0;
   font-family: Nunito;
   font-weight: 600;
+  text-decoration: none;
 }
 
 /* BUTTON */
@@ -25,18 +26,29 @@
   color: #fff;
   box-shadow: 0 0 10px #2930412f;
   cursor: pointer;
-  font-size: 1.6vh;
+  font-size: 1.2vw;
   transition: all 0.2s;
 }
 .btn:hover {
   transform: scale(1.1);
 }
-
+.container {
+  padding: 0 5vw;
+}
 nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 2vh 5vw;
+  align-items: center;
   /* height: 10vh; */
-  margin-top: 2vh
+}
+.link {
+  margin-left: 5vw;
+  font-size: 1.2vw;
+  color: #000;
+}
+.link:hover {
+  text-decoration: underline;
 }
 
 .logo {
@@ -51,19 +63,21 @@ nav {
 
 .nav-links li {
   list-style: none;
-
 }
 
-.nav-links li a{
+.nav-links li a {
   text-decoration: none;
   list-style: none;
-  margin: 0 1vw;
+  margin: 0 2vw;
   color: var(--black);
-  font-size: 1.2vw
+  font-size: 1.2vw;
+}
+.nav-links li a:hover {
+  text-decoration: underline;
 }
 
 .pfp {
   border-radius: 100%;
-  height: 10vh;
+  height: 5vh;
   margin: auto 0;
 }

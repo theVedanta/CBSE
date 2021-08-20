@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="257.369" height="156.546" viewBox="0 0 257.369 156.546">
+  <defs>
+    <filter id="Path_28" x="0" y="0" width="94.101" height="56.457" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#fff" flood-opacity="0.235"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_22" x="11.296" y="95.07" width="71.511" height="61.476" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#fff" flood-opacity="0.235"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_64" data-name="Group 64" transform="translate(-117.631 -33.47)">
+    <text id="CBSE" transform="translate(216 129)" font-size="58" font-family="Helvetica" letter-spacing="0.002em"><tspan x="0" y="0">CBSE</tspan></text>
+    <g id="Component_2_17" data-name="Component 2 – 17" transform="translate(126.631 39.47)">
+      <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Path_28)">
+        <path id="Path_28-2" data-name="Path 28" d="M14811.043,4047.016l-18.012-25.442s18.964-13.015,37.989-13.015,38.111,13.015,38.111,13.015l-16.846,25.442a175.4,175.4,0,0,0-20.3-1.331A194.17,194.17,0,0,0,14811.043,4047.016Z" transform="translate(-14784.03 -4002.56)" fill="#0037cc"/>
+      </g>
+      <g id="Icon_feather-book-open" data-name="Icon feather-book-open" transform="translate(11.398 45.566)">
+        <path id="Path_20" data-name="Path 20" d="M3,4.5H18.691c5.777,0,10.461,5.236,10.461,11.694l-.013,36.3h0c-3.023-2.572-3.5-4.138-7.833-4.138H3Z" transform="translate(-3 -4.5)" fill="#3c69e0"/>
+        <path id="Path_21" data-name="Path 21" d="M44.151,4.5H28.461C22.683,4.5,18,9.736,18,16.194V52.5c1.518-.445,3.513-4.148,7.845-4.148H44.151Z" transform="translate(8.151 -4.5)" fill="#3c69e0"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Path_22)">
+        <path id="Path_22-2" data-name="Path 22" d="M14827.54,4082.305s3.926-.835,9.918-1.66a115.949,115.949,0,0,1,43.593,1.722l-26.153,40.455Z" transform="translate(-14807.24 -3978.28)" fill="#acc2ff"/>
+      </g>
+    </g>
+  </g>
+</svg>

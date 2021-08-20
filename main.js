@@ -7,10 +7,11 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 5000;
 const dbURI = process.env.DB_URL;
 const cookieParser = require("cookie-parser");
-// const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const uuid = require("uuid");
+const Teacher = require("./models/teacher");
 
 // DB CONNECTION
 async function connectDB() {
@@ -34,25 +35,28 @@ app.use(express.static(__dirname + "/public"));
 app.use("/teacher", require("./routes/teachers/teachers"));
 app.use("/student", require("./routes/students/students"));
 app.use("/job", (req, res) => {
-  res.render("job-offers")
-})
+  res.render("job-offers");
+});
 
 app.use("/ebooks", (req, res) => {
-  res.render("ebooks")
-})
+  res.render("ebooks");
+});
 
 app.use("/home", (req, res) => {
-  res.render("home")
-})
+  res.render("home");
+});
 
 // app.use("/teacher")
 
-app.get("/meet", (req, res) => {
-  res.redirect(`/class/${uuid.v4()}`);
+app.get("/meet/:room", checkMeetAuth, async (req, res) => {
+  const teacher = await Teacher.findById(req.user.id);
+  res.render("room", {
+    roomID: req.params.room,
+    userID: uuid.v4(),
+    teech: teacher ? true : false,
+  });
 });
-app.get("/meet/:room", (req, res) => {
-  res.render("room", { roomID: req.params.room, userID: uuid.v4() });
-});
+
 app.get("/logout", (req, res) => {
   res.clearCookie("auth-token").redirect("/");
 });
@@ -73,6 +77,28 @@ app.get("/err", (req, res) => {
   res.json({ Error: "Some error has occurred" });
 });
 
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
 app.get("*", (req, res) => {
   res.render("404");
 });
+
+// middleware
+function checkMeetAuth(req, res, next) {
+  let token = req.cookies["auth-token"];
+
+  if (token == null) {
+    res.redirect("/");
+  } else {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) {
+        res.redirect("/");
+      } else {
+        req.user = user;
+        next();
+      }
+    });
+  }
+}
