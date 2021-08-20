@@ -46,6 +46,10 @@ io.on("connection", (socket) => {
     socket.join(roomID);
     socket.broadcast.to(roomID).emit("new-user", userID);
   });
+
+  socket.on("disconnect", () => {
+    socket.broadcast.to(roomID).emit("disconnected", userID);
+  });
 });
 
 // ERRORS
