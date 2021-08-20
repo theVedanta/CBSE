@@ -3,22 +3,17 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 
 router.use("/auth", checkNotAuthenticated, require("./auth"));
-router.use("/class", checkAuthenticated, require("./class"));
-router.use("/create-student", checkAuthenticated, require("./stud-create"));
-router.use("/", checkAuthenticated, (req, res) => {
-  res.render("teachers/dash");
-});
 
 // MIDDLEWARE
 function checkAuthenticated(req, res, next) {
   let token = req.cookies["auth-token"];
 
   if (token == null) {
-    res.redirect("/teacher/auth");
+    res.redirect("/student/auth");
   } else {
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) {
-        res.redirect("/teacher/auth");
+        res.redirect("/student/auth");
       } else {
         req.user = user;
         next();

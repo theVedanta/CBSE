@@ -32,15 +32,18 @@ app.use(express.static(__dirname + "/public"));
 
 // ROUTES
 app.use("/teacher", require("./routes/teachers/teachers"));
-app.use("/student", require("./routes/students"));
+app.use("/student", require("./routes/students/students"));
 
 // app.use("/teacher")
 
-app.get("/class", (req, res) => {
+app.get("/meet", (req, res) => {
   res.redirect(`/class/${uuid.v4()}`);
 });
-app.get("/class/:room", (req, res) => {
+app.get("/meet/:room", (req, res) => {
   res.render("room", { roomID: req.params.room, userID: uuid.v4() });
+});
+app.get("/logout", (req, res) => {
+  res.clearCookie("auth-token").redirect("/");
 });
 
 io.on("connection", (socket) => {

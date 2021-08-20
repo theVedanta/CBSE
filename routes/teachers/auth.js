@@ -23,7 +23,7 @@ router.post("/register", async (req, res) => {
   });
 
   try {
-    teacher.save();
+    await teacher.save();
   } catch (err) {
     res.redirect("/err");
   }

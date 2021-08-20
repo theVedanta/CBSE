@@ -77,12 +77,12 @@ body {
 
 form {
   padding: 5vh 0;
-  padding-top: 2vw;
+  padding-top: 7vh;
   padding-left: 4.5vw;
 }
 form h1 {
   font-weight: 700;
-  color: #434175;
+  color: #17295a;
   font-size: 4vh;
 }
 .type {
@@ -112,7 +112,7 @@ form h1 {
 }
 label {
   font-size: 1.6vh;
-  color: #434175;
+  color: #17295a;
   padding-left: 0.6vw;
   font-weight: 500;
 }
@@ -194,7 +194,7 @@ form p {
 form h2 {
   font-size: 2vh;
   margin-top: 1vh;
-  color: #434175;
+  color: #17295a;
   margin-bottom: 2vh;
 }
 button[type="submit"] {
@@ -228,12 +228,12 @@ input[type="number"] {
 
 .count h6 {
   font-size: 1vw;
-  color: #434175;
+  color: #17295a;
   font-weight: 500;
   margin-top: 4vh;
 }
 .resend {
-  color: #434175;
+  color: #17295a;
   text-decoration: underline;
   display: none;
 }
@@ -245,7 +245,7 @@ input[type="number"] {
 .mail-box h3 {
   font-size: 1.4vw;
   font-weight: 600;
-  color: #434175;
+  color: #17295a;
 }
 .mail-box {
   position: fixed;
