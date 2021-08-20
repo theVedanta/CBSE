@@ -9,6 +9,17 @@
   <body>
     <form action="/teacher/create-meet" method="POST">
       <input type="text" name="name" placeholder="Meeting name" />
+      <input
+        type="text"
+        name="time"
+        placeholder="Meeting Time (just for reference)"
+      />
+      <select type="text" name="subject" placeholder="Subject">
+        <option value="hindi">Hindi</option>
+        <option value="english">English</option>
+        <option value="math">Maths</option>
+        <option value="science">Science</option>
+      </select>
       <select name="class">
         <% for (let classe of classes) { %>
         <option value="<%= classe._id %>"><%= classe.name %></option>

@@ -9,6 +9,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  time: {
+    type: String,
+    required: true,
+  },
+  subject: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("meet", userSchema);

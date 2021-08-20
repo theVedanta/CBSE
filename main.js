@@ -42,10 +42,6 @@ app.use("/ebooks", (req, res) => {
   res.render("ebooks");
 });
 
-app.use("/home", (req, res) => {
-  res.render("home");
-});
-
 // app.use("/teacher")
 
 app.get("/meet/:room", checkMeetAuth, async (req, res) => {

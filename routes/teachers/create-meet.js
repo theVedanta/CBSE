@@ -15,6 +15,8 @@ router.post("/", async (req, res) => {
   const meet = new Meet({
     name: body.name,
     class: body.class,
+    time: body.time,
+    subject: body.subject,
   });
 
   try {
