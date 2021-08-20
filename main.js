@@ -33,10 +33,11 @@ app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 // ROUTES
-// app.use("/teachers", require("routes/teachers"));
-// app.use("/students", require("routes/students"));
+app.use("/auth", authRoute, require("./routes/Auth"));
+app.use("/teacher", authRoute, require("./routes/teachers"));
+app.use("/student", require("./routes/students"));
 
-app.use("/auth", require("./routes/Auth"));
+// app.use("/teacher")
 
 app.get("/class", (req, res) => {
   res.redirect(`/class/${uuid.v4()}`);
@@ -60,6 +61,6 @@ io.on("connection", (socket) => {
 app.get("/err", (req, res) => {
   res.json({ Error: "Some error has occurred" });
 });
-app.get("*", (req, res) => {
-  res.render("404");
-});
+// app.get("*", (req, res) => {
+//   res.render("404");
+// });

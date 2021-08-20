@@ -9,7 +9,7 @@
         <% if(locals.error){ %>
         <p class="error"><%= locals.error %></p>
         <% } %>
-    <form action="/login" method="POST">
+    <form action="/auth/login" method="POST">
         <input type="text" id="username" name="username" placeholder="Username" required> <br>
         <input type="password" id="password" name="password" placeholder="password" required><br>
         <button type="submit" class ="button">Log In</button>

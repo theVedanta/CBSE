@@ -35,7 +35,7 @@ router.post("/signup", async (req, res) => {
 
     if (userExists) {
         // return res.status(400).send('That username is taken');
-        return res.render("auth/signup.ejs", {error: "User already exists!n"});        
+        return res.render("auth/signup.ejs", {error: "User already exists!"});        
     }
 
     try{
