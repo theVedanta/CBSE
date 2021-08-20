@@ -33,6 +33,17 @@ app.use(express.static(__dirname + "/public"));
 // ROUTES
 app.use("/teacher", require("./routes/teachers/teachers"));
 app.use("/student", require("./routes/students/students"));
+app.use("/job", (req, res) => {
+  res.render("job-offers")
+})
+
+app.use("/ebooks", (req, res) => {
+  res.render("ebooks")
+})
+
+app.use("/home", (req, res) => {
+  res.render("home")
+})
 
 // app.use("/teacher")
 
@@ -61,6 +72,7 @@ io.on("connection", (socket) => {
 app.get("/err", (req, res) => {
   res.json({ Error: "Some error has occurred" });
 });
+
 app.get("*", (req, res) => {
   res.render("404");
 });

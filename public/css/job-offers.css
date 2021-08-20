@@ -1,0 +1,70 @@
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.hero-text {
+    margin: auto 0;
+    width: 40%;
+}
+
+.hero-img {
+    height: 50vh
+}
+
+.hero-text h2 {
+    font-size: 2.5vw;
+    margin-bottom: 2vh;
+}
+
+label {
+    color: var(--blue);
+    font-size: 1vw;
+}
+
+.search-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+#searchBar {
+    border: 2px solid var(--blue);
+    padding: 1vh 2vh;
+    border-radius: 5px;
+    margin-top: 1vh;
+    font-size: 1.2vw;
+    /* width: 80%; */
+    font-weight: 400;
+}
+
+.hero-text i {
+    margin-left: -15vw;
+    color: white;
+    background-color: var(--blue);
+    padding: 2vh 4vh;
+    border-radius: 2vh;
+}
+
+/* Offers */
+
+.card {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 40px 0 rgba(0, 0, 0, 0.1);
+    padding: 3vh;
+    color: var(--blue);
+}
+
+.card h1 {
+    font-size: 1.8vw;
+}
+
+.card h2 {
+    font-size: 1.6vw;
+}
+
+.card p{
+    font-size: 0.8vw;
+    color: #707070;
+}
