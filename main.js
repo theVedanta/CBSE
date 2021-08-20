@@ -12,6 +12,8 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const uuid = require("uuid");
 
+const authRoute = require("./middleware/authRoute");
+
 // DB CONNECTION
 async function connectDB() {
   await mongoose.connect(dbURI, {
@@ -33,6 +35,8 @@ app.use(express.static(__dirname + "/public"));
 // ROUTES
 // app.use("/teachers", require("routes/teachers"));
 // app.use("/students", require("routes/students"));
+
+app.use("/auth", require("./routes/Auth"));
 
 app.get("/", (req, res) => {
   res.redirect(`/${uuid.v4()}`);
