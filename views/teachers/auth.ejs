@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBSE - Login/Sign Up</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+  </head>
+  <body>
+    <h1 class="back">CBSE</h1>
+    <div class="box">
+      <form class="login-form" action="/teacher/auth/login" method="POST">
+        <h1>Login</h1>
+        <% if (message) { %>
+        <h2 class="error erActive"><%= message %></h2>
+        <% } else { %>
+        <h2 class="error"></h2>
+        <% } %>
+        <h2>Please enter your details below</h2>
+        <div class="input">
+          <label for="email">Email Address</label>
+          <input maxlength="50" type="email" name="email" required />
+        </div>
+        <div class="input" style="margin-bottom: 1vh">
+          <label for="password">Password</label>
+          <input maxlength="50" type="password" name="password" required />
+        </div>
+        <p class="forgot">Forgot Password?</p>
+        <br />
+        <button type="submit" class="btn">Login</button>
+        <p>Don't have an Account?&nbsp;<span id="regis">Register</span></p>
+      </form>
+
+      <form class="register-form" action="/teacher/auth/register" method="POST">
+        <h1>Sign Up</h1>
+        <h2>Please enter your details below</h2>
+        <% if (message) { %>
+        <h2 class="error erActive"><%= message %></h2>
+        <% } else { %>
+        <h2 class="error"></h2>
+        <% } %>
+        <input
+          style="display: none"
+          type="text"
+          name="type"
+          value="individual"
+        />
+        <div class="smols">
+          <div class="input">
+            <label for="name">Name</label>
+            <br />
+            <input maxlength="50" type="text" name="name" required />
+          </div>
+          <div class="input">
+            <label for="email">Email</label>
+            <br />
+            <input maxlength="50" type="email" name="email" required />
+          </div>
+        </div>
+        <div class="input">
+          <label for="password">Password</label>
+          <br />
+          <input maxlength="50" type="password" name="password" required />
+        </div>
+        <div class="input">
+          <label for="school">School Name</label>
+          <br />
+          <input maxlength="50" type="text" name="school" required />
+        </div>
+        <button type="submit" class="btn">Create Account</button>
+        <p>
+          Already have an Account?&nbsp;<span style="display: none" id="login"
+            >Login</span
+          >
+        </p>
+      </form>
+
+      <div class="banner">
+        <img src="/assets/auth.svg" alt="" />
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+      let regis = document.querySelector("#regis");
+      let login = document.querySelector("#login");
+
+      // Check render
+      changeMode();
+
+      function btnMode() {
+        auth = localStorage.getItem("authType");
+        if (auth === "login") {
+          localStorage.setItem("authType", "regis");
+        } else {
+          localStorage.setItem("authType", "login");
+        }
+      }
+      function changeMode() {
+        auth = localStorage.getItem("authType");
+        if (auth) {
+          if (auth === "login") {
+            login.style.display = "none";
+            regis.style.display = "inline-block";
+            document.querySelector(".register-form").style.display = "none";
+            document.querySelector(".login-form").style.display = "block";
+          } else {
+            regis.style.display = "none";
+            login.style.display = "inline-block";
+            document.querySelector(".register-form").style.display = "block";
+            document.querySelector(".login-form").style.display = "none";
+          }
+        } else {
+          localStorage.setItem("authType", "login");
+          changeMode();
+        }
+      }
+
+      regis.addEventListener("click", (e) => {
+        btnMode();
+        changeMode();
+        for (let er of document.querySelectorAll(".error")) {
+          er.textContent = "";
+          if (er.classList.contains("erActive")) {
+            er.classList.remove("erActive");
+          }
+        }
+      });
+      login.addEventListener("click", (e) => {
+        btnMode();
+        changeMode();
+        for (let er of document.querySelectorAll(".error")) {
+          er.textContent = "";
+          if (er.classList.contains("erActive")) {
+            er.classList.remove("erActive");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -12,8 +12,6 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const uuid = require("uuid");
 
-const authRoute = require("./middleware/authRoute");
-
 // DB CONNECTION
 async function connectDB() {
   await mongoose.connect(dbURI, {
@@ -33,8 +31,7 @@ app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 // ROUTES
-app.use("/auth", authRoute, require("./routes/Auth"));
-app.use("/teacher", authRoute, require("./routes/teachers"));
+app.use("/teacher", require("./routes/teachers/teachers"));
 app.use("/student", require("./routes/students"));
 
 // app.use("/teacher")
@@ -61,6 +58,6 @@ io.on("connection", (socket) => {
 app.get("/err", (req, res) => {
   res.json({ Error: "Some error has occurred" });
 });
-// app.get("*", (req, res) => {
-//   res.render("404");
-// });
+app.get("*", (req, res) => {
+  res.render("404");
+});
