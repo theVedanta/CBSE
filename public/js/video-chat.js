@@ -1,7 +1,7 @@
 const socket = io("/");
 const newPeer = new Peer(userIDf, {
   secure: true,
-  host: "peer-for-cbse.herokuapp.com",
+  host: "cbse-20.herokuapp.com",
   port: "443",
 });
 const peers = {};
