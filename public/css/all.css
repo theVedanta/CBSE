@@ -4,7 +4,9 @@
   --dblue: #133798;
   --black: #000;
 }
-
+body {
+  width: 100vw;
+}
 * {
   border: none;
   box-sizing: border-box;

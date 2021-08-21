@@ -18,6 +18,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/meets.css" />
   </head>
   <body>
     <nav>
@@ -32,13 +33,14 @@
     </nav>
 
     <section class="meets-hold container">
-      <h1>Your Meetings</h1>
+      <h1 id="y">Your Meetings</h1>
       <div class="meets">
         <% for (let meet of meets) { %>
         <div class="meet">
           <h1><%= meet.name %></h1>
-          <h2><%= meet.time %></h2>
-          <h2><%= meet.subject %></h2>
+          <h2>Time: <%= meet.time %></h2>
+          <h2>Subject: <%= meet.subject %></h2>
+          <a href="/meet/<%= meet.id %>" class="btn">Join</a>
         </div>
         <% } %>
       </div>
