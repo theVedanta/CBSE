@@ -52,10 +52,13 @@
     <script>
       if (document.querySelector(".mark")) {
         document.querySelector(".mark").addEventListener("click", async () => {
-          await fetch("http://localhost:5000/student/mark/<%= roomID %>", {
-            method: "GET",
-            credentials: "include",
-          });
+          await fetch(
+            "https://cbse-2.herokuapp.com/student/mark/<%= roomID %>",
+            {
+              method: "GET",
+              credentials: "include",
+            }
+          );
         });
       }
     </script>
