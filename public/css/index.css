@@ -124,29 +124,3 @@
   transform: translate(0, -5px);
   cursor: pointer;
 }
-
-/* Footer */
-
-footer {
-  /* width: 100vw; */
-  padding: 2vh 8%;
-  height: 30vh;
-  background: var(--blue);
-  /* margin-top: 10vh; */
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-footer img {
-  width: 100%;
-}
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-footer .right {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-}

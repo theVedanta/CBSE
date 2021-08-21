@@ -5,7 +5,7 @@
   --black: #000;
 }
 body {
-  width: 100vw;
+  /* width: 100vw; */
 }
 * {
   border: none;
@@ -42,7 +42,7 @@ button {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 2vh 5vw;
+  padding: 2vh 7vw;
   align-items: center;
   /* height: 10vh; */
 }
@@ -105,4 +105,30 @@ footer > div {
 footer i {
   font-size: 1vw;
   margin: 0 0.5vw;
+}
+
+/* Footer */
+
+footer {
+  /* width: 100vw; */
+  padding: 2vh 10%;
+  height: 30vh;
+  background: var(--blue);
+  /* margin-top: 10vh; */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer img {
+  width: 70%;
+}
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+footer .right {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
 }
