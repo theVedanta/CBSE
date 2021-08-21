@@ -1,3 +1,12 @@
+.container {
+  width: 90%;
+  margin: 15vh auto;
+}
+
+.one {
+  margin-top: 5vh
+}
+
 .hero {
   display: flex;
 }
@@ -13,10 +22,11 @@
   font-size: 3vw;
   margin-bottom: 2vh;
   font-weight: 800;
-  padding-right: 10vw;
+  padding-right: 6vw;
 }
+
 .hero p {
-  padding-right: 10vw;
+  padding-right: 7vw;
   font-size: 1.2vw;
 }
 .hero .btn {
@@ -68,11 +78,61 @@
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.18);
 }
 
+/* Announcements */
+
+.announcements {
+  width: 80%;
+  margin: 8vh auto;
+}
+
+.announcements h2{
+  font-size: 2.5vw;
+  margin-bottom: 3vh;
+  color: var(--blue)
+}
+
+.item {  
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 4vh;
+}
+
+.item h1{
+  font-size: 1.8vw;
+  margin-bottom: 3vh
+}
+
+.item p {
+  font-size: 1.3vw;
+  margin-bottom: 2.5vh;
+}
+
+.item button {  
+  background-color: var(--blue);
+  color: white;
+  text-decoration: none;
+  padding: 1.5vh 2.5vh;
+  border-radius: 1vh;
+  transition: transform 0.5s;
+}
+
+.item button a{
+  color: white;
+  text-decoration: none;
+}
+
+.item button:hover {
+  transform: translate(0, -5px);
+  cursor: pointer;
+}
+
+/* Footer */
+
 footer {
-  width: 100vw;
+  /* width: 100vw; */
+  padding: 2vh 8%;
   height: 30vh;
   background: var(--blue);
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   color: #fff;
   display: flex;
   align-items: center;

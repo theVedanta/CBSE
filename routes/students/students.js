@@ -12,6 +12,10 @@ router.get("/meets", checkAuthenticated, async (req, res) => {
   res.render("students/meets", { meets: meets });
 });
 
+router.get("/profile", (req, res)=>{
+  res.render("students/profile")
+})
+
 // MIDDLEWARE
 function checkAuthenticated(req, res, next) {
   let token = req.cookies["auth-token"];
