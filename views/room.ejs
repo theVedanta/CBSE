@@ -44,5 +44,20 @@
       <button id="vid" class="active but"><i class="fas fa-video"></i></button>
       <a href="/" class="but ex"><i class="fas fa-times"></i></a>
     </div>
+
+    <% if (!teech) { %>
+    <div class="btn mark">Mark your attendence here!</div>
+    <% } %>
+
+    <script>
+      if (document.querySelector(".mark")) {
+        document.querySelector(".mark").addEventListener("click", async () => {
+          await fetch("http://localhost:5000/student/mark/<%= roomID %>", {
+            method: "GET",
+            credentials: "include",
+          });
+        });
+      }
+    </script>
   </body>
 </html>

@@ -17,6 +17,7 @@ router.post("/", async (req, res) => {
     class: body.class,
     time: body.time,
     subject: body.subject,
+    studentsPresent: [],
   });
 
   try {

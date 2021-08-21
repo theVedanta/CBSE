@@ -12,6 +12,25 @@ router.get("/meets", checkAuthenticated, async (req, res) => {
   res.render("students/meets", { meets: meets });
 });
 
+router.get("/mark/:class", checkAuthenticated, async (req, res) => {
+  try {
+    const meet = await Meet.findById(req.params.class);
+    const arr = meet.studentsPresent;
+    arr.push(req.user.id);
+    console.log(arr);
+    await Meet.updateOne(
+      { _id: req.params.class },
+      {
+        $set: {
+          studentsPresent: arr,
+        },
+      }
+    );
+  } catch (err) {
+    console.log(err);
+    res.json({ err: "some error occurred" });
+  }
+});
 router.get("/profile", (req, res)=>{
   res.render("students/profile")
 })
