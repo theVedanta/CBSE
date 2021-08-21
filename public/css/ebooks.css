@@ -1,83 +1,83 @@
 .hero-container {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin: 10vh auto;
-    margin-bottom: 15vh
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 10vh auto;
+  margin-bottom: 15vh;
 }
 
 .hero-text {
-    margin: auto 0;
-    width: 50%;
+  margin: auto 0;
+  width: 50%;
 }
 
 .hero-img {
-    height: 45vh
+  height: 45vh;
 }
 
 .hero-text h2 {
-    font-size: 2vw;
-    margin-bottom: 2vh;
+  font-size: 2vw;
+  margin-bottom: 2vh;
 }
 
-.option-wrap{
-    display: flex;
+.option-wrap {
+  display: flex;
 }
 
-.option:last-of-type{
-    margin-left: 2vw;
+.option:last-of-type {
+  margin-left: 2vw;
 }
 
 label {
-    color: var(--blue);
-    font-size: 1vw;
+  color: var(--blue);
+  font-size: 1vw;
 }
 
-#searchBar {
-    border: 2px solid var(--blue);
-    padding: 1vh 2vh;
-    border-radius: 5px;
-    margin-top: 1vh;
-    font-size: 1.2vw;
-    font-weight: 400;
+.searchBar {
+  border: 2px solid var(--blue);
+  padding: 1vh 2vh;
+  border-radius: 5px;
+  margin-top: 1vh;
+  font-size: 1.2vw;
+  font-weight: 400;
 }
 
-.class #searchBar{
-    width: 4vw;
+.class .searchBar {
+  width: 4vw;
 }
 
 .hero-text i {
-    margin-left: -4.5vw;
-    font-size: 1.2vw;
-    color: var(--blue);
-    padding: 2vh 4vh;
-    border-radius: 2vh;
-    cursor: pointer;
+  margin-left: -4.5vw;
+  font-size: 1.2vw;
+  color: var(--blue);
+  padding: 2vh 4vh;
+  border-radius: 2vh;
+  cursor: pointer;
 }
 
 button {
-    background-color: var(--blue);
-    margin: 2.1vw;
-    padding: 1.5vh 2.5vh;
-    color: white;
-    border-radius: 1vh;
-    cursor: pointer;
+  background-color: var(--blue);
+  margin: 2.1vw;
+  padding: 1.5vh 2.5vh;
+  color: white;
+  border-radius: 1vh;
+  cursor: pointer;
 }
 
 /* Books */
 
 .books {
-    width: 80%;
-    margin: 3vh auto;
-    margin-bottom: 8vh;
+  width: 80%;
+  margin: 3vh auto;
+  margin-bottom: 8vh;
 }
 
 .books h2 {
-    font-size: 2vw;
-    margin-bottom: 5vh;
+  font-size: 2vw;
+  margin-bottom: 5vh;
 }
 .books img {
-    /* height: 35vh; */
-    margin-bottom: 2vw;
-    margin-right: 2vw;
+  /* height: 35vh; */
+  margin-bottom: 2vw;
+  margin-right: 2vw;
 }

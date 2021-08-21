@@ -1,28 +1,28 @@
 .hero-container {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin: 10vh auto;
-    margin-bottom: 15vh
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 10vh auto;
+  margin-bottom: 15vh;
 }
 
 .hero-text {
-    margin: auto 0;
-    width: 40%;
+  margin: auto 0;
+  width: 40%;
 }
 
 .hero-img {
-    height: 45vh
+  height: 45vh;
 }
 
 .hero-text h2 {
-    font-size: 2.5vw;
-    margin-bottom: 2vh;
+  font-size: 2.5vw;
+  margin-bottom: 2vh;
 }
 
 label {
-    color: var(--blue);
-    font-size: 1vw;
+  color: var(--blue);
+  font-size: 1vw;
 }
 
 /* .search-wrap {
@@ -31,92 +31,93 @@ label {
 } */
 
 #searchBar {
-    border: 2px solid var(--blue);
-    padding: 1vh 2vh;
-    border-radius: 5px;
-    margin-top: 1vh;
-    font-size: 1.2vw;
-    /* width: 80%; */
-    font-weight: 400;
+  border: 2px solid var(--blue);
+  padding: 1vh 2vh;
+  border-radius: 5px;
+  margin-top: 1vh;
+  font-size: 1.2vw;
+  /* width: 80%; */
+  font-weight: 400;
 }
 
 .hero-text i {
-    margin-left: -4.5vw;
-    font-size: 1.2vw;
-    color: var(--blue);
-    /* background-color: var(--blue); */
-    padding: 2vh 4vh;
-    border-radius: 2vh;
-    cursor: pointer;
+  margin-left: -4.5vw;
+  font-size: 1.2vw;
+  color: var(--blue);
+  /* background-color: var(--blue); */
+  padding: 2vh 4vh;
+  border-radius: 2vh;
+  cursor: pointer;
 }
 
 /* Offers */
 
 .offers {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .card-wrap {
-    display: flex;
+  display: flex;
 }
 
 .card {
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-    padding: 4vh;
-    color: var(--blue);
-    width: 29vw;
-    border-radius: 1vh;
-    margin: 0 1.5vw
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 4vh;
+  color: var(--blue);
+  width: 29vw;
+  border-radius: 1vh;
+  margin: 0 1.5vw;
 }
 
 .card h1 {
-    font-size: 1.8vw;
+  font-size: 1.8vw;
 }
 
 .card h2 {
-    font-size: 1.6vw;
+  font-size: 1.6vw;
 }
 
-.card p{
-    font-size: 0.8vw;
-    color: var(--black);
-    margin: 0.5vh 0;
+.card p {
+  font-size: 0.8vw;
+  color: var(--black);
+  margin: 0.5vh 0;
 }
 
 .card h3 {
-    font-size: 1vw;
-    margin-bottom: 3vh;
+  font-size: 1vw;
+  margin-bottom: 3vh;
 }
 
-.card i, span {
-    font-size: 1vw;
-    /* color: var(--black) */
-    color: #707070;
-    margin: 2vh 0;
+.card i,
+span {
+  font-size: 1vw;
+  /* color: var(--black) */
+  color: #707070;
+  margin: 2vh 0;
 }
 
 span {
-    margin-left: 0.5vw;
+  margin-left: 0.5vw;
 }
 
 .card button {
-    background-color: var(--blue);
-    color: white;
-    text-decoration: none;
-    padding: 1.5vh 2.5vh;
-    border-radius: 1vh;
-    transition: transform 0.5s;
-}   
+  background-color: var(--blue);
+  color: white;
+  text-decoration: none;
+  padding: 1.5vh 2.5vh;
+  border-radius: 1vh;
+  transition: transform 0.5s;
+}
 
-.card button a{
-    color: white;
-    text-decoration: none;
+.card button a {
+  color: white;
+  text-decoration: none;
 }
 
 button.apply:hover {
-    transform: translate(0, -5px);
-    cursor: pointer;
+  transform: translate(0, -5px);
+  cursor: pointer;
 }
 
 /* Job Type */
@@ -143,10 +144,10 @@ button.apply:hover {
   color: var(--blue);
   font-size: 1.8vw;
   margin-bottom: 4vh;
-  transition: all 0.5s; 
+  transition: all 0.5s;
 }
 
-.typeCard p{
+.typeCard p {
   font-size: 1vw;
   margin-bottom: 1vh;
   /* transition: all 0.5s; */
@@ -157,7 +158,7 @@ button.apply:hover {
 }
 
 .typeCard button {
-    transition: transform 0.5s;
+  transition: transform 0.5s;
 }
 
 .typeCard .apply {
@@ -166,26 +167,29 @@ button.apply:hover {
   border-radius: 1vh;
 }
 
-.typeCard .apply a{  
+.typeCard .apply a {
   color: white;
   text-decoration: none;
 }
 
 .typeCard:hover {
-    background-color: var(--blue);
-    color: white;
-    transform: scale(1.1);
-    transition: all 0.5s;
+  background-color: var(--blue);
+  color: white;
+  transform: scale(1.1);
+  transition: all 0.5s;
 }
 
 .typeCard:hover h1 {
-    color: white;
+  color: white;
 }
 
 .typeCard:hover .apply {
-    background-color: white;
+  background-color: white;
 }
 
 .typeCard:hover .apply a {
-    color: var(--blue);
+  color: var(--blue);
+}
+.owl-carousel .owl-stage {
+  padding: 4vh 0;
 }
