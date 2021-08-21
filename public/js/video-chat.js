@@ -1,7 +1,8 @@
 const socket = io("/");
 const newPeer = new Peer(userIDf, {
-  host: "/",
-  port: "5001",
+  secure: true,
+  host: "peerjs-server.herokuapp.com",
+  port: "443",
 });
 const peers = {};
 
