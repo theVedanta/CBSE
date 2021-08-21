@@ -34,7 +34,7 @@ video {
   align-items: center;
   z-index: 10;
 }
-button {
+.but {
   z-index: 10;
   margin: 0 0.6vw;
   font-size: 1.1vw;
@@ -56,4 +56,9 @@ button {
 .active {
   background-color: var(--blue);
   color: #fff;
+}
+.ex {
+  color: #fff;
+  background-color: rgb(194, 33, 11);
+  border: 1px solid rgb(194, 33, 11);
 }
