@@ -1,0 +1,37 @@
+#y {
+  font-size: 2.6vw;
+  margin-top: 10vh;
+}
+.meets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 4vh;
+}
+.meet {
+  width: 30%;
+  height: 24vh;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.103);
+  border-radius: 10px;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-center;
+}
+.meet h1 {
+  font-size: 2vw;
+  font-weight: 700;
+}
+.meet h2 {
+  font-size: 1.2vw;
+  margin: 0.4vh 0;
+}
+.btn {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 68%;
+}
