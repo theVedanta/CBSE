@@ -3,12 +3,6 @@ const router = express.Router();
 const Class = require("../../models/class");
 const Teacher = require("../../models/teacher");
 
-router.get("/", async (req, res) => {
-  const teacher = await Teacher.findOne({ _id: req.user.id });
-  const classes = await Class.find({ school: teacher.school });
-  res.render("teachers/classes", { classes: classes });
-});
-
 router.get("/create", (req, res) => {
   res.render("teachers/create-class");
 });

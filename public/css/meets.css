@@ -2,6 +2,9 @@
   font-size: 2.6vw;
   margin-top: 10vh;
 }
+.meets-hold {
+  margin-bottom: 10vh;
+}
 .meets {
   display: flex;
   justify-content: space-between;
@@ -9,6 +12,7 @@
   flex-wrap: wrap;
   width: 100%;
   margin-top: 4vh;
+  margin-bottom: 4vh;
 }
 .meet {
   width: 30%;
@@ -28,10 +32,17 @@
   font-size: 1.2vw;
   margin: 0.4vh 0;
 }
-.btn {
-  width: 30%;
+.meet .btn {
+  width: 40%;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 68%;
+  margin-left: 64%;
+  transform: translateY(25%);
+}
+
+hr {
+  border: 2px solid rgba(0, 0, 0, 0.16);
+  border-radius: 100px;
 }

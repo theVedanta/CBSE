@@ -37,7 +37,9 @@ router.post("/register", async (req, res) => {
     expiresIn: "24h",
   });
 
-  res.cookie("auth-token", accessToken, { maxAge: 172800000 }).redirect("/");
+  res
+    .cookie("auth-token", accessToken, { maxAge: 172800000 })
+    .redirect("/teacher");
 });
 
 // LOGIN
@@ -57,7 +59,7 @@ router.post("/login", async (req, res) => {
       });
       res
         .cookie("auth-token", accessToken, { maxAge: 2592000000 })
-        .redirect("/");
+        .redirect("/teacher");
     } else {
       res.render("teachers/auth", { message: "Incorrect Password" });
     }

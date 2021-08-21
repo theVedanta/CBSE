@@ -1,13 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
+const Class = require("../../models/class");
+const Meet = require("../../models/meet");
+const Student = require("../../models/student");
+const Teacher = require("../../models/teacher");
 
 router.use("/auth", checkNotAuthenticated, require("./auth"));
 router.use("/class", checkAuthenticated, require("./class"));
 router.use("/create-student", checkAuthenticated, require("./stud-create"));
 router.use("/create-meet", checkAuthenticated, require("./create-meet"));
-router.use("/", checkAuthenticated, (req, res) => {
-  res.render("teachers/dash");
+router.use("/", checkAuthenticated, async (req, res) => {
+  const teech = await Teacher.findById(req.user.id);
+  const classes = await Class.find({ school: teech.school });
+  const students = await Student.find({ school: teech.school });
+  const meets = await Meet.find();
+
+  res.render("teachers/dash", { classes, students, meets });
 });
 
 // MIDDLEWARE

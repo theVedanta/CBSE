@@ -5,27 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CBSE - Create Meet</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bitter:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/inp.css" />
   </head>
   <body>
-    <form action="/teacher/create-meet" method="POST">
-      <input type="text" name="name" placeholder="Meeting name" />
-      <input
-        type="text"
-        name="time"
-        placeholder="Meeting Time (just for reference)"
-      />
-      <select type="text" name="subject" placeholder="Subject">
-        <option value="hindi">Hindi</option>
-        <option value="english">English</option>
-        <option value="math">Maths</option>
-        <option value="science">Science</option>
-      </select>
-      <select name="class">
-        <% for (let classe of classes) { %>
-        <option value="<%= classe._id %>"><%= classe.name %></option>
-        <% } %>
-      </select>
-      <button type="submit">Generate Link</button>
-    </form>
+    <nav>
+      <div class="left">
+        <a hef="/home"><img class="logo" src="/assets/logo.svg" alt="" /></a>
+      </div>
+      <div class="right">
+        <a href="/" class="link">Home</a>
+        <a href="/job" class="link">Job Offers</a>
+        <a href="/ebooks" class="link">E-Books</a>
+        <a href="/logout" class="link">Logout</a>
+      </div>
+    </nav>
+
+    <section class="container">
+      <form action="/teacher/create-meet" method="POST">
+        <h1>Create a Meeting</h1>
+        <input type="text" name="name" placeholder="Meeting name" />
+        <input
+          type="text"
+          name="time"
+          placeholder="Meeting Time (just for reference)"
+        />
+        <select type="text" name="subject" placeholder="Subject">
+          <option value="hindi">Hindi</option>
+          <option value="english">English</option>
+          <option value="math">Maths</option>
+          <option value="science">Science</option>
+        </select>
+        <select name="class">
+          <% for (let classe of classes) { %>
+          <option value="<%= classe._id %>"><%= classe.name %></option>
+          <% } %>
+        </select>
+
+        <button class="btn" type="submit">Generate Link</button>
+      </form>
+
+      <img src="/assets/curi.svg" alt="" />
+    </section>
   </body>
 </html>

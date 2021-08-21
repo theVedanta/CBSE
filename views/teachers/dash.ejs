@@ -5,9 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CBSE - Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bitter:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/meets.css" />
   </head>
   <body>
-    <a href="/logout">Logout</a>
-    <a href="/teacher/class/create">create class</a>
+    <nav>
+      <div class="left">
+        <a hef="/home"><img class="logo" src="/assets/logo.svg" alt="" /></a>
+      </div>
+      <div class="right">
+        <a href="/" class="link">Home</a>
+        <a href="/job" class="link">Job Offers</a>
+        <a href="/ebooks" class="link">E-Books</a>
+        <a href="/logout" class="link">Logout</a>
+      </div>
+    </nav>
+
+    <section class="container meets-hold">
+      <h1 id="y">Your Classrooms</h1>
+      <div class="meets">
+        <% for (let classe of classes) { %>
+        <div class="meet">
+          <h1><%= classe.name %></h1>
+          <h2><%= classe.description %></h2>
+          <a href="/" class="btn">See Students</a>
+        </div>
+        <% } %>
+      </div>
+      <a href="/teacher/class/create" class="btn">Create A Classroom</a>
+    </section>
+
+    <div class="container">
+      <hr />
+    </div>
+
+    <section class="container meets-hold">
+      <h1 id="y">Your Students</h1>
+      <div class="meets">
+        <% for (let student of students) { %>
+        <div class="meet">
+          <h1><%= student.name %></h1>
+          <h2><%= student.email %></h2>
+          <a href="/" class="btn">See Details</a>
+        </div>
+        <% } %>
+      </div>
+      <a href="/teacher/create-student" class="btn">Create A Student</a>
+    </section>
+
+    <div class="container">
+      <hr />
+    </div>
+
+    <section class="container meets-hold">
+      <h1 id="y">Your Meetings</h1>
+      <div class="meets">
+        <% for (let meet of meets) { %>
+        <div class="meet">
+          <h1><%= meet.name %></h1>
+          <h2><%= meet.time %></h2>
+          <h2><%= meet.subject %></h2>
+          <a href="/meet/<%= meet._id %>" class="btn">Join</a>
+        </div>
+        <% } %>
+      </div>
+      <a href="/teacher/create-meet" class="btn">Create A Classroom</a>
+    </section>
   </body>
 </html>

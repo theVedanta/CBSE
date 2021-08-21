@@ -5,19 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create - Student</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bitter:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/inp.css" />
   </head>
   <body>
-    <form action="/teacher/create-student" method="POST">
-      <input type="text" name="name" placeholder="name" />
-      <input type="email" name="email" placeholder="Email" />
-      <input type="text" name="password" placeholder="Password" />
-      <select name="class">
-        <% for (let classe of classes) { %>
-        <option value="<%= classe._id %>"><%= classe.name %></option>
-        <% } %>
-      </select>
+    <nav>
+      <div class="left">
+        <a hef="/home"><img class="logo" src="/assets/logo.svg" alt="" /></a>
+      </div>
+      <div class="right">
+        <a href="/" class="link">Home</a>
+        <a href="/job" class="link">Job Offers</a>
+        <a href="/ebooks" class="link">E-Books</a>
+        <a href="/logout" class="link">Logout</a>
+      </div>
+    </nav>
 
-      <button type="submit">Create</button>
-    </form>
+    <section class="container">
+      <form action="/teacher/create-student" method="POST">
+        <h1>Create a Student</h1>
+        <input type="text" name="name" placeholder="name" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="text" name="password" placeholder="Password" />
+        <select name="class">
+          <% for (let classe of classes) { %>
+          <option value="<%= classe._id %>"><%= classe.name %></option>
+          <% } %>
+        </select>
+
+        <button class="btn" type="submit">Create</button>
+      </form>
+
+      <img src="/assets/certi.svg" alt="" />
+    </section>
   </body>
 </html>

@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  margin-top: 10vh;
+}
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50vh;
+  padding-left: 4vw;
+}
+h1 {
+  font-size: 2vw;
+}
+img {
+  width: 40%;
+}
+input,
+select,
+textarea {
+  padding: 1.2vh 1vw;
+  width: 80%;
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  font-size: 0.8vw;
+}
+textarea {
+  resize: vertical;
+  height: 50%;
+}
+.btn {
+  width: 80%;
+}

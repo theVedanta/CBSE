@@ -26,7 +26,7 @@ router.post("/login", async (req, res) => {
       });
       res
         .cookie("auth-token", accessToken, { maxAge: 2592000000 })
-        .redirect("/");
+        .redirect("/student/meets");
     } else {
       res.render("students/auth", { message: "Incorrect Password" });
     }
