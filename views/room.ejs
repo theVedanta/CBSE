@@ -52,15 +52,15 @@
     <script>
       if (document.querySelector(".mark")) {
         document.querySelector(".mark").addEventListener("click", async () => {
-          await fetch(
-            "https://cbse-20.herokuapp.com/student/mark/<%= roomID %>",
+          const a = await fetch(
+            "http://cbse-20.herokuapp.com/student/mark/<%= roomID %>",
             {
               method: "GET",
               credentials: "include",
             }
           );
 
-          document.querySelector(".mark").remove();
+          if (a) document.querySelector(".mark").remove();
         });
       }
     </script>

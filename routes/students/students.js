@@ -26,14 +26,16 @@ router.get("/mark/:class", checkAuthenticated, async (req, res) => {
         },
       }
     );
+
+    res.json({ done: true });
   } catch (err) {
     console.log(err);
     res.json({ err: "some error occurred" });
   }
 });
-router.get("/profile", (req, res)=>{
-  res.render("students/profile")
-})
+router.get("/profile", (req, res) => {
+  res.render("students/profile");
+});
 
 // MIDDLEWARE
 function checkAuthenticated(req, res, next) {
