@@ -53,7 +53,7 @@
       if (document.querySelector(".mark")) {
         document.querySelector(".mark").addEventListener("click", async () => {
           const a = await fetch(
-            "https://cbse20.herokuapp.com/student/mark/<%= roomID %>",
+            "https://cbse-20.herokuapp.com/student/mark/<%= roomID %>",
             {
               method: "GET",
               credentials: "include",
